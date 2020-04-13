@@ -1,12 +1,9 @@
 package com.rs.questiongenerator.questiongeneratorservice;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
-
-@SpringBootTest
+//@SpringBootTest
 class QuestiongeneratorServiceApplicationTests {
 
-    @Test
+   //@Test
     void contextLoads() {
     }
 

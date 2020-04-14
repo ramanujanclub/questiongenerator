@@ -17,10 +17,12 @@ public class QuestionGeneratorServiceImpl implements QuestionGeneratorService {
 
     private QuestionBankIntegrationService questionBankIntegrationService;
     private JsonFormatGeneratorService jsonFormatGeneratorService;
+    private PDFFormatGeneratorService pdfFormatGeneratorService;
 
     @Override
     public GeneratedQuestionPaper generateQuestionPaperForClass(long classId) {
         List<Question> questionList =  questionBankIntegrationService.searchQuestionByClass(classId);
+        pdfFormatGeneratorService.generatedQuestionPaper(questionList);
         return jsonFormatGeneratorService.generatedQuestionPaper(questionList);
     }
 }

@@ -1,9 +1,7 @@
 package com.rs.questiongenerator.service;
 
-import com.rs.questiongenerator.domain.Question;
-
-import java.util.List;
+import com.rs.questiongenerator.domain.GeneratedQuestionPaper;
 
 public interface QuestionGeneratorService {
-    List<Question> generateQuestionPaperForClass(long classId);
+    GeneratedQuestionPaper generateQuestionPaperForClass(long classId);
 }

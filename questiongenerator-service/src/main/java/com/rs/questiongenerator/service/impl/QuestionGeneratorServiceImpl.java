@@ -1,5 +1,6 @@
 package com.rs.questiongenerator.service.impl;
 
+import com.rs.questiongenerator.domain.GeneratedQuestionPaper;
 import com.rs.questiongenerator.domain.Question;
 import com.rs.questiongenerator.service.QuestionBankIntegrationService;
 import com.rs.questiongenerator.service.QuestionGeneratorService;
@@ -15,9 +16,11 @@ import java.util.List;
 public class QuestionGeneratorServiceImpl implements QuestionGeneratorService {
 
     private QuestionBankIntegrationService questionBankIntegrationService;
+    private JsonFormatGeneratorService jsonFormatGeneratorService;
 
     @Override
-    public List<Question> generateQuestionPaperForClass(long classId) {
-        return questionBankIntegrationService.searchQuestionByClass(classId);
+    public GeneratedQuestionPaper generateQuestionPaperForClass(long classId) {
+        List<Question> questionList =  questionBankIntegrationService.searchQuestionByClass(classId);
+        return jsonFormatGeneratorService.generatedQuestionPaper(questionList);
     }
 }
